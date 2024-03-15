@@ -1,0 +1,41 @@
+services:
+  landing-app:
+    image: node:20.9.0
+    working_dir: /usr/src/landing-app
+    command: bash -c "yarn install && yarn run landing:dev"
+    volumes:
+      - ./landing-app:/usr/src/landing-app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.landing-app.rule=Host(`localhost`)"
+      - "traefik.http.services.landing-app.loadbalancer.server.port=3000"
+    depends_on:
+      - traefik
+
+  app:
+    image: node:20.9.0
+    working_dir: /usr/src/main-app
+    command: bash -c "yarn install && yarn run app:dev"
+    volumes:
+      - ./main-app:/usr/src/main-app
+    ports:
+      - "8000:8000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=Host(`app.localhost`)"
+      - "traefik.http.services.app.loadbalancer.server.port=4200"
+    depends_on:
+      - traefik
+
+  traefik:
+    image: traefik:v2.10
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - traefik.enable=true

@@ -1,0 +1,74 @@
+export type Colors =
+  | 'bg/dark'
+  | 'bg/default'
+  | 'bg/light'
+  | 'bg/grey/1'
+  | 'bg/grey/2'
+  | 'bg/grey/3'
+  | 'bg/blue/1'
+  | 'blue/1'
+  | 'blue/2'
+  | 'text/button/contained'
+  | 'text/button/outlined'
+  | 'text/button/ghost'
+  | 'text/black/1'
+  | 'text/grey/1'
+  | 'text/placeholder'
+  | 'text/disabled'
+  | 'text/error'
+  | 'text/success'
+  | 'button/default'
+  | 'button/hover'
+  | 'button/pressed'
+  | 'button/disabled'
+  | 'stroke/default'
+  | 'stroke/hover'
+  | 'stroke/pressed'
+  | 'stroke/disabled'
+  | 'field/default'
+  | 'field/focused'
+  | 'field/disabled'
+  | 'field/error'
+  | 'field/success'
+  | 'icon/inactive'
+  | 'icon/active'
+  | 'border/default'
+  | 'sideMenuItem/bg/active';
+
+export const defaultColors: Record<Colors, string> = {
+  'bg/dark': '#001054',
+  'bg/light': '#FFFFFF',
+  'bg/default': '#D9D9D9',
+  'bg/grey/1': '#EFEFF2',
+  'bg/grey/2': '#FAFAFF',
+  'bg/grey/3': '#F0F0F5',
+  'bg/blue/1': '#D9F2FF',
+  'blue/1': '#5770D1',
+  'blue/2': '#5FBEF7',
+  'text/button/contained': '#F1F3F3',
+  'text/button/outlined': '#5770D1',
+  'text/button/ghost': '#5770D1',
+  'text/black/1': '#212121',
+  'text/grey/1': '#5A5A81',
+  'text/placeholder': '#B4B4DB',
+  'text/disabled': '#ffffff',
+  'text/error': '#BD0000',
+  'text/success': '#51BA82',
+  'button/default': '#5770D1',
+  'button/hover': '#435CBD',
+  'button/pressed': '#2F48A9',
+  'button/disabled': 'rgba(87, 112, 209, 0.50)',
+  'stroke/default': '#5770D1',
+  'stroke/hover': '#4D66C7',
+  'stroke/pressed': '#2F48A9',
+  'stroke/disabled': '#F1F3F3',
+  'field/default': '#DDDFE4',
+  'field/focused': '#CFE8F5',
+  'field/disabled': '#F1F3F3',
+  'field/error': '#BD0000',
+  'field/success': '#51BA82',
+  'icon/inactive': '#B4B4DB',
+  'icon/active': '#CFE8F5',
+  'border/default': '#D9D9D9',
+  'sideMenuItem/bg/active': 'rgba(207, 232, 245, 0.3)',
+};

@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+yarn affected:lint
+
+git add -A .
+
+yarn affected:type-check
+
+yarn affected:test
+
+yarn affected:e2e

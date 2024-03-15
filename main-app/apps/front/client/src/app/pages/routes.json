@@ -1,0 +1,7 @@
+{
+  "ROOT": "/",
+  "SIGN_IN": "/auth/signIn",
+  "SIGN_UP": "/auth/signUp",
+  "RESET_PASSWORD": "/auth/resetPassword",
+  "CHANGE_PASSWORD": "/auth/changePassword"
+}
